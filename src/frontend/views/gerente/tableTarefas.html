@@ -20,13 +20,13 @@
                     d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
             </svg> Voltar</a>
         <h1 class="text-md ">Tabela de Tarefas</h1>
-        <p>Nessa tela você poderá está passando o ID do Supervisor para ver todos as
+        <p>Nesta tela, você pode passar o ID do supervisor para ver todos as
             tarefas criadas por ele. Ou pode filtrar a tabela e visualizar todas as
             tarefas ou só as pendentes:</p>
 
         <form id="TarefasCriadasSupervisor">
             <div class="mb-3 ">
-                <label for="SupervisorID" class="form-label">Selecione o supervisor que deseja ver as Tarefas</label>
+                <label for="SupervisorID" class="form-label">Selecione o supervisor que deseja ver as tarefas</label>
                 <select class="form-control" id="SupervisorID">
                     <option value="">Selecione um Supervisor</option>
 
@@ -35,7 +35,7 @@
             <button type="submit" class="btn btn-primary" onClick="visualizarTarefas(event)">Buscar Supervisor</button>
         </form>
         <div class="border-top border-bottom mt-4 pt-3 w-100 text-center">
-            <h3>Ver tarefas do funcionarios</h3>
+            <h3>Ver tarefas do funcionários</h3>
             <div class="d-flex flex-row justify-content-center gap-3 w-100 mt-4" id="filtroTarefas">
 
                 <div>
@@ -64,8 +64,8 @@
                     <th class="col">ID do Supervisor</th>
                     <th class="col">Nome do Supervisor</th>
                     <th class="col">Status </th>
-                    <th class="col">ID de Funcionario</th>
-                    <th class="col">Nome de Funcionario</th>
+                    <th class="col">ID de Funcionário</th>
+                    <th class="col">Nome de Funcionário</th>
                     <th class="col">Descrição</th>
                 </tr>
             </thead>
@@ -78,10 +78,12 @@
 
 
 
-    <script src="../../scripts/gerente.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../scripts/gerente/tarefasPendentes.js"></script>
 </body>
 
 </html>

@@ -18,7 +18,7 @@ pegaTodosOsFuncionariosDisponiveis,
 pegaTodosOsClientes,
 pegaTodosOsFuncionarios,
 pegaTodosOsSupervisores,
-pegaTodosOsGerentes
+pegaTodosOsGerentes,
 } from "./Controllers/Cliente.js";
 
 
@@ -26,7 +26,6 @@ pegaTodosOsGerentes
 
 
 const router = Router();
-
 
 
 // Rota de teste de conexão

@@ -68,3 +68,4 @@ export async function pegaTodosOsGerentes(req, res, next) {
     next(error);
   }
 }
+

@@ -1,29 +1,18 @@
-// Script para concluir tarefas de funcionários
-function concluirTarefa(e) {
-    e.preventDefault();
-const tarefaID = document.getElementById('tarefaId').value;
-const url = `http://localhost:3000/funcionario/${tarefaID}`;
-console.log(tarefaID);
-fetch(url,{
-    method: 'PATCH',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ id: tarefaID })
-}).then(responde => responde.json()).then(data=>{
-    console.log(data); //verifica se o id foi enviado corretamente
-    alert(data.message || 'Tarefa concluída com sucesso!'); // Exibe mensagem de sucesso
-}).catch(error => {
-    console.error('Erro ao enviar o ID da tarefa:', error);
-});
-}
-
 // Função para visualizar o status da tarefa
 
 function visualizarStatusTarefa(e){
     e.preventDefault();
 
 const funcionarioID = document.getElementById('funcionarioID').value;
+
+if(funcionarioID===""){
+    Swal.fire({
+          title: "Selecione um funcionário.",
+          confirmButtonText: "OK",
+        });
+    return
+}
+
 const url = `http://localhost:3000/funcionario/${funcionarioID}`
 
 fetch(url ,{
@@ -42,7 +31,12 @@ fetch(url ,{
         return;
     }
     if (tarefas.length === 0) {
-        alert('Nenhuma tarefa encontrada para este funcionário.');
+        Swal.fire({
+          title: "Oops!.",
+          text:"Nenhuma tarefa encontrada para este funcionário.",
+          icon:"error", 
+          confirmButtonText: "OK",
+        });
         return;
     }
     const tarefaContainer = document.getElementById('tarefaContainer');
@@ -61,9 +55,20 @@ fetch(url ,{
         `;
         tarefaContainer.appendChild(tr);
     });
+    Swal.fire({
+          title: "Oops!.",
+          text:"Tarefas buscadas com sucesso!",
+          icon:"success", 
+          confirmButtonText: "OK",
+        });
 })
 .catch(error => {
-    console.error('Erro ao buscar as tarefas:', error); 
+    Swal.fire({
+          title: "Erro!.",
+          text:"Erro ao buscar as tarefas.",
+          icon:"error", 
+          confirmButtonText: "OK",
+        });
 });
 }
 
@@ -84,6 +89,11 @@ window.addEventListener('DOMContentLoaded',()=>{
         });
     }
 ).catch(error => {
-        console.error('Erro ao carregar os funcionários:', error);
+        Swal.fire({
+          title: "Erro!.",
+          text:'Erro ao conectar com o servidor.',
+          icon:"error", 
+          confirmButtonText: "OK",
+        });
     });
 })
