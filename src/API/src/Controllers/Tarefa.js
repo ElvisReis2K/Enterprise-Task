@@ -249,6 +249,7 @@ export async function criaTarefa(req, res, next) {
 
     res.status(201).json({
       statusCode: 201,
+      message: `Tarefa criada com sucesso! O ID da sua tarefa é ${result.lastID}.`,
       tarefaId: result.lastID,
       message: `Tarefa criada com sucesso! ID atribuído: ${result.lastID}`
     });
