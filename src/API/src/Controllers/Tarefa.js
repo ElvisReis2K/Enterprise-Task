@@ -37,6 +37,23 @@ export async function pegaTodasTarefasNaoAtribuidas(req, res, next) {
   }
 }
 
+export async function pegaTodasTarefasAtribuidas(req, res, next) {
+  try {
+    const db = await openDb();
+
+    const tarefas = await db.all(`
+      SELECT 
+        descricao, id
+      FROM tarefas 
+      WHERE id_funcionário IS NOT NULL
+    `);
+
+    res.status(200).json(tarefas);
+  } catch (error) {
+    next(error);
+  }
+}
+
 export async function pegaTodasAsTarefasPendentes(req, res, next) { 
   try {
     const db = await openDb();

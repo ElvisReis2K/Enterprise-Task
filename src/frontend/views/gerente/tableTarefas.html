@@ -19,7 +19,7 @@
                 <path fill-rule="evenodd"
                     d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
             </svg> Voltar</a>
-        <h1 class="text-md ">Tabela de Tarefas</h1>
+        <h1 class="text-md ">Tabela de tarefas criadas pelo supervisor</h1>
         <p>Nesta tela, você pode passar o ID do supervisor para ver todos as
             tarefas criadas por ele. Ou pode filtrar a tabela e visualizar todas as
             tarefas ou só as pendentes:</p>
@@ -31,28 +31,11 @@
                     <option value="">Selecione um supervisor</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary" onClick="visualizarTarefas(event)">Buscar Supervisor</button>
-        </form>
-        <div class="border-top border-bottom mt-4 pt-3 w-100 text-center">
-            <h3>Ver tarefas do funcionários</h3>
-            <div class="d-flex flex-row justify-content-center gap-3 w-100 mt-4" id="filtroTarefas">
-
-                <div>
-                    <label for="showCompletedTasks">Mostrar <strong>TODAS</strong> as tarefas</label>
-                    <input type="radio" id="showCompletedTasks" value="todas" name="filtro" onClick="filtrar(event)">
-                </div>
-
-                <div>
-                    <label for="showPendingTasks">Mostrar apenas as tarefas <strong>PENDENTES</strong></label>
-                    <input type="radio" id="showPendingTasks" value="pendentes" name="filtro" onClick="filtrar(event)">
-                </div>
-
-                <!-- <div>
-                    <label for="showCompletedTasks">Mostrar apenas as tarefas <strong>CONCLUÍDAS</strong></label>
-                    <input type="radio" id="showCompletedTasks" value="concluidas" name="filtro" onClick="filtrar(event)">
-                </div> -->
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" onClick="visualizarTarefas(event)">Buscar Supervisor</button>
             </div>
-        </div>
+        </form>
+       
 
 
 
@@ -61,7 +44,7 @@
                 <tr>
                     <th class="col">ID da Tarefa</th>
                     <th class="col">ID do Supervisor</th>
-                    <th class="col">Nome do Supervisor</th>
+                    <th class="col">Criado por</th>
                     <th class="col">Status </th>
                     <th class="col">ID de Funcionário</th>
                     <th class="col">Nome de Funcionário</th>

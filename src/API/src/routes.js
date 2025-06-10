@@ -12,7 +12,8 @@ pegaAsTarefasConcluidasDeUmFuncionario,
   pegaTodasAsTarefasCriadasPorUmSupervisor,
   pegaTodasAsTarefas,
 pegaTodasAsTarefasPendentes,
-pegaTodasTarefasNaoAtribuidas
+pegaTodasTarefasNaoAtribuidas,
+pegaTodasTarefasAtribuidas
 } from "./Controllers/Tarefa.js";
 import {
 pegaTodosOsFuncionariosDisponiveis,
@@ -62,6 +63,7 @@ router.patch(
   associaTarefaAUmFuncionario
 );
 router.get('/supervisor/tarefas/naoatribuidas' , pegaTodasTarefasNaoAtribuidas);
+router.get('/supervisor/tarefas/atribuidas' , pegaTodasTarefasAtribuidas);
 
 // // Rotas do cliente GERENTE
 router.get("/gerente/todas", pegaTodasAsTarefas);

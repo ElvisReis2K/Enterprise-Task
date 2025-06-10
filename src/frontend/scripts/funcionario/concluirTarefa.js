@@ -1,3 +1,32 @@
+document.getElementById("tarefaId").addEventListener("focus", carregarTarefas);
+
+
+async function carregarTarefas(){
+  try{
+    const response = await fetch("http://localhost:3000/supervisor/tarefas/atribuidas");
+    const data = await response.json();
+    if(response.ok){
+      let select = document.getElementById("tarefaId");
+      data.forEach((tarefa)=>{
+        const option = document.createElement("option");
+        option.value = tarefa.id;
+        option.textContent = tarefa.id + " - " + tarefa.descricao;
+        select.appendChild(option);
+      });
+    } else {
+      alert(
+          data.mensagem ||
+          data.erro ||
+          data.error ||
+          data.message ||
+          "Ocorreu um erro."
+        );
+    }
+  } catch (error){
+    alert("Erro ao conectar com o servidor.");
+  }
+}
+
 // Script para concluir tarefas de funcionários
 async function concluirTarefa(e) {
   e.preventDefault();

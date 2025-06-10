@@ -19,7 +19,9 @@
         <form id="concluirTarefaForm" class="w-100">
             <div class="mb-3">
                 <label for="tarefaId" class="form-label">ID da Tarefa</label>
-                <input type="number" class="form-control" id="tarefaId" required>
+                <select class="form-select" id="tarefaId" required>
+                    <option value="">Selecione uma tarefa</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary" onClick="concluirTarefa(event)">Concluir Tarefa</button>
     </div>
