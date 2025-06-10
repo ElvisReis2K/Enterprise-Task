@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "http://localhost:3000/usuario/funcionarios"
       );
       const funcionarios = await resposta.json();
-      selectFuncionario.innerHTML = '<option value="">Selecione...</option>';
+      selectFuncionario.innerHTML = '<option value="">Selecione um funcionário</option>';
       funcionarios.forEach((func) => {
         const option = document.createElement("option");
         option.value = func.id;

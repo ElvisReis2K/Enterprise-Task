@@ -4,14 +4,15 @@ async function buscarFuncionarios() {
     const data = await response.json();
     if (response.ok) {
       insereFuncionariosNoSelect(data)
-    } else
+    } else {
       alert(
         data.mensagem ||
-          data.erro ||
-          data.error ||
-          data.message ||
-          "Ocorreu um erro."
+        data.erro ||
+        data.error ||
+        data.message ||
+        "Ocorreu um erro."
       );
+    }
   } catch (error) {
     alert("Erro ao conectar com o servidor.");
   }
@@ -26,6 +27,7 @@ function insereFuncionariosNoSelect(funcionarios) {
   });
 }
 buscarFuncionarios();
+
 async function buscarSup() {
   try {
     const response = await fetch("http://localhost:3000/usuario/supervisores");
@@ -35,10 +37,10 @@ async function buscarSup() {
     } else
       alert(
         data.mensagem ||
-          data.erro ||
-          data.error ||
-          data.message ||
-          "Ocorreu um erro."
+        data.erro ||
+        data.error ||
+        data.message ||
+        "Ocorreu um erro."
       );
   } catch (error) {
     alert("Erro ao conectar com o servidor.");
@@ -66,10 +68,10 @@ async function buscarTarefasNaoAtribuidas() {
     } else
       alert(
         data.mensagem ||
-          data.erro ||
-          data.error ||
-          data.message ||
-          "Ocorreu um erro."
+        data.erro ||
+        data.error ||
+        data.message ||
+        "Ocorreu um erro."
       );
   } catch (error) {
     alert("Erro ao conectar com o servidor.");
@@ -78,8 +80,7 @@ async function buscarTarefasNaoAtribuidas() {
 function insereTafNoSelect(tarefas) {
   let select = document.getElementById("idTarefa");
 
-  // limpa tudo, mantendo apenas a primeira opção "Selecione..."
-  select.innerHTML = '<option value="">Selecione...</option>';
+  select.innerHTML = '<option value="">Selecione uma tarefa</option>';
 
   tarefas.forEach((tarefa) => {
     const option = document.createElement("option");
@@ -123,15 +124,19 @@ async function criarTarefa(event) {
     });
     const data = await response.json();
     if (response.ok) {
-      alert(data.message);
+      Swal.fire({
+        title: "Success!",
+        text: `${data.message}`,
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     } else
-      alert(
-        data.mensagem ||
-          data.erro ||
-          data.error ||
-          data.message ||
-          "Ocorreu um erro."
-      );
+      Swal.fire({
+        title: "Oops!",
+        text: `${data.error}`,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
   } catch (error) {
     alert("Erro ao fazer a requisição:\n" + error.message);
   }
@@ -140,8 +145,8 @@ async function associarTarefa(event) {
   event.preventDefault();
   const idFuncionario = document.getElementById("idFuncionario").value;
   const idTarefa = document.getElementById("idTarefa").value;
-    console.log("idFuncionario é ",idFuncionario)
-    console.log("idTarefa é ",idTarefa)
+  console.log("idFuncionario é ", idFuncionario)
+  console.log("idTarefa é ", idTarefa)
   if (idFuncionario === "") {
     Swal.fire({
       title: "Digite o ID de um funcionário.",
@@ -168,16 +173,21 @@ async function associarTarefa(event) {
       }
     );
     const data = await response.json();
-    if (response.ok) {
-      alert(data.mensagem);
+    console.log(data);
+   if (response.ok) {
+      Swal.fire({
+        title: "Success!",
+        text: `${data.mensagem}`,
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     } else
-      alert(
-        data.mensagem ||
-          data.erro ||
-          data.error ||
-          data.message ||
-          "Ocorreu um erro."
-      );
+      Swal.fire({
+        title: "Oops!",
+        text: `${data.error}`,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
   } catch (error) {
     alert("Erro ao fazer a requisição:\n" + error.message);
   }
