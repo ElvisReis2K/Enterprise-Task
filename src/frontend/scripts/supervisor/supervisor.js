@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnVerConcluidas = document.getElementById("btnVerConcluidas");
   const btnVerTodas = document.getElementById("btnVerTodas");
   const listaTarefas = document.getElementById("listaTarefas");
+  
 
   // Carrega funcionários no select da homeSupervisor
   async function carregarFuncionarios() {
@@ -173,6 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  
+
   // Criação de tarefa
   const formCriar = document.getElementById("formCriarTarefa");
   if (formCriar) {
@@ -243,4 +246,5 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("idFuncionario")) {
     carregarFuncionariosAssociar();
   }
+
 });

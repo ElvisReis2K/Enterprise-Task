@@ -13,7 +13,9 @@
         <form id="formCriarTarefa">
             <div class="mb-3">
                 <label for="idSupervisor" class="form-label">ID do Supervisor</label>
-                <input type="number" class="form-control" id="idSupervisor" required>
+                <select id="idSupervisor" class="form-select" required>
+                    <option value="">Selecione um supervisor</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="descricaoTarefa" class="form-label">Descrição da Tarefa</label>
@@ -27,12 +29,14 @@
         <form id="formAssociarTarefa">
             <div class="mb-3">
                 <label for="idTarefa" class="form-label">ID da Tarefa</label>
-                <input type="number" class="form-control" id="idTarefa" required>
+                <select class="form-select" id="idTarefa" required>
+                    <option value="">Selecione a Tarefa</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="idFuncionario" class="form-label">Funcionário</label>
                 <select id="idFuncionario" class="form-select" required>
-                    <option value="">Selecione...</option>
+                    <option value="">Selecione um Funcionário</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-success">Associar</button>

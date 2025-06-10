@@ -26,6 +26,69 @@ function insereFuncionariosNoSelect(funcionarios) {
   });
 }
 buscarFuncionarios();
+async function buscarSup() {
+  try {
+    const response = await fetch("http://localhost:3000/usuario/supervisores");
+    const data = await response.json();
+    if (response.ok) {
+      insereSupNoSelect(data)
+    } else
+      alert(
+        data.mensagem ||
+          data.erro ||
+          data.error ||
+          data.message ||
+          "Ocorreu um erro."
+      );
+  } catch (error) {
+    alert("Erro ao conectar com o servidor.");
+  }
+}
+function insereSupNoSelect(supervisores) {
+  let select = document.getElementById("idSupervisor");
+  supervisores.forEach((func) => {
+    const option = document.createElement("option");
+    option.value = func.id;
+    option.textContent = func.nome;
+    select.appendChild(option);
+  });
+}
+buscarSup();
+
+
+document.getElementById("idTarefa").addEventListener("focus", buscarTarefasNaoAtribuidas);
+async function buscarTarefasNaoAtribuidas() {
+  try {
+    const response = await fetch("http://localhost:3000/supervisor/tarefas/naoatribuidas");
+    const data = await response.json();
+    if (response.ok) {
+      insereTafNoSelect(data)
+    } else
+      alert(
+        data.mensagem ||
+          data.erro ||
+          data.error ||
+          data.message ||
+          "Ocorreu um erro."
+      );
+  } catch (error) {
+    alert("Erro ao conectar com o servidor.");
+  }
+}
+function insereTafNoSelect(tarefas) {
+  let select = document.getElementById("idTarefa");
+
+  // limpa tudo, mantendo apenas a primeira opção "Selecione..."
+  select.innerHTML = '<option value="">Selecione...</option>';
+
+  tarefas.forEach((tarefa) => {
+    const option = document.createElement("option");
+    option.value = tarefa.id;
+    option.textContent = `${tarefa.id} - ${tarefa.descricao}`;
+    select.appendChild(option);
+  });
+}
+buscarTarefasNaoAtribuidas();
 
 async function criarTarefa(event) {
   event.preventDefault();

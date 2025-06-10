@@ -20,6 +20,23 @@ export async function pegaTodasAsTarefas(req, res, next) {
   }
 }
 
+export async function pegaTodasTarefasNaoAtribuidas(req, res, next) {
+  try {
+    const db = await openDb();
+
+    const tarefas = await db.all(`
+      SELECT 
+        descricao, id
+      FROM tarefas 
+      WHERE id_funcionário IS NULL
+    `);
+
+    res.status(200).json(tarefas);
+  } catch (error) {
+    next(error);
+  }
+}
+
 export async function pegaTodasAsTarefasPendentes(req, res, next) { 
   try {
     const db = await openDb();
@@ -232,8 +249,8 @@ export async function criaTarefa(req, res, next) {
 
     res.status(201).json({
       statusCode: 201,
-      message: "Tarefa criada com sucesso!",
       tarefaId: result.lastID,
+      message: `Tarefa criada com sucesso! ID atribuído: ${result.lastID}`
     });
   } catch (error) {
     // Se ocorrer um erro inesperado (ex: problema de conexão com o DB),
