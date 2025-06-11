@@ -54,7 +54,7 @@ Set-ExecutionPolicy RemoteSigned
 3. Execute o comando abaixo:
 
 ```bash
-git clone https://github.com/ElvisReis2K/Enterprise-Task
+git clone https://github.com/ElvisReis2K/Enterprise-Task.git
 ```
 
 ---
