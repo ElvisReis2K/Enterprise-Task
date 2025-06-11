@@ -5,7 +5,7 @@ Sistema para acompanhamento de tarefas de funcionários para empresas.
 Segue a lista dos integrantes da equipe:
 - Elvis Oliveira dos Reis - RA: 1272318921
 - Luiz Henrique dos Santos Conceição - RA: 12724141299
-- Marcos Guilherme Silva da Cruz  RA: 12723213780
+- Marcos Guilherme Silva da Cruz - RA: 12723213780
 - Natan Oliveira da Silva - RA: 12723211400
 - Paulo Vitor Moreira dos Santos - RA: 12723111472
 
