@@ -99,7 +99,7 @@ Enterprise-Task/src/frontend/views
 ---
 
 ### 📄 Documentações Adicionais
-Esta documentação possui duas documentações anexas que fecilitarão a compreensão do projeto.
+Esta documentação possui duas documentações anexas que facilitarão a compreensão do projeto.
 
 - [Documentação do front-end](https://github.com/ElvisReis2K/Enterprise-Task/blob/main/src/frontend/Documenta%C3%A7%C3%A3o%20Front.md), que apresenta o conteúdo de cada página da aplicação e explica como usar as funcionalidades da aplicação.
 - [Documentação da API](https://github.com/ElvisReis2K/Enterprise-Task/blob/main/src/API/README.md), que apresenta as rotas da API e os detalhes de como interagir com a API por meio de requisições.
