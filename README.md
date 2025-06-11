@@ -101,11 +101,10 @@ Enterprise-Task/src/frontend/views
 ### 📄 Documentações Adicionais
 Esta documentação possui duas documentações anexas que fecilitarão a compreensão do projeto.
 
-- [Documentação do front-end](https://github.com/ElvisReis2K/Enterprise-Task/blob/main/src/frontend/Documenta%C3%A7%C3%A3o%20Front.md)
-- [Documentação da API]()
-
+- [Documentação do front-end](https://github.com/ElvisReis2K/Enterprise-Task/blob/main/src/frontend/Documenta%C3%A7%C3%A3o%20Front.md), que apresenta o conteúdo de cada página da aplicação e explica como usar as funcionalidades da aplicação.
+- [Documentação da API](https://github.com/ElvisReis2K/Enterprise-Task/blob/main/src/API/README.md), que apresenta as rotas da API e os detalhes de como interagir com a API por meio de requisições.
 
 ---
 
-## Justificativa da Aordagem de Comunicação Escolhida
+## Justificativa da Abordagem de Comunicação Escolhida
 Escolhemos fazer uma API porque, dentre as opções mencionadas pelo professor (Sockets, API, RPC etc.), APIs eram a abordagem de comunicação com que tínhamos maior familiaridade. Além disso, APIs são uma abordagem mais adequada do que RPC e Sockets para a nossa necessidade porque oferecem uma abstração clara e simples, facilitando o desenvolvimento e a manutenção ao esconder detalhes complexos da comunicação. Além disso, APIs baseadas em HTTP são amplamente compatíveis com diversas linguagens e plataformas, garantindo maior interoperabilidade entre sistemas heterogêneos. Por fim, elas promovem melhor escalabilidade e segurança, com suporte maduro para autenticação, controle de acesso e monitoramento, tornando a gestão e a expansão dos serviços mais eficientes do que soluções baseadas diretamente em RPC ou Sockets.
