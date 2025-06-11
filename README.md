@@ -11,7 +11,7 @@ Segue a lista dos integrantes da equipe:
 
 ---
 
-## Documentação de instalação e execução do projeto.
+## Instruções de instalação e execução do projeto.
 
 ---
 
