@@ -96,6 +96,9 @@ Enterprise-Task/src/frontend/views
 
 3. Abra o arquivo `home_page.html` com seu navegador preferido.
 
+> ⚠️ **Aviso:** Para evitar problemas de funcionamento, pedimos que não se use a extensão Live Server para abrir o arquivo `home_page.html`.
+
+
 ---
 
 ### 📄 Documentações Adicionais
